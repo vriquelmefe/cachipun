@@ -26,42 +26,51 @@ for (i = 1; i <= countRound; i++) {
   var optionRandom = selectRandom();
   //le digo al usuario que seleccione una opción
   var optionSelected = prompt('indique una opcion: ¿piedra?, ¿papel? o ¿tijera?');
+  //indico el numero de la ronda
+  document.write(i + ' ronda <br>');
+  //verifico cual es el ganador de la ronda
   //comienza el calculo para ver quien gana
   if (optionRandom === optionSelected) {
     alert('Esto es un empate!!! ambos escogieron : ' + optionSelected);
+    document.write(` Empate con: ${optionSelected} <br>`)
+    countSelectedRandom += 1;
+    countSelectedUser += 1;
+
   } else if ((optionRandom == 'piedra') && (optionSelected == 'tijera')) {
     alert('Lo siento perdiste! : ' + optionRandom + ' le gana  a ' + optionSelected);
+    document.write(` Gana el computador con: ${optionRandom} <br>`)
+    countSelectedRandom += 1;
+
   } else if ((optionRandom == 'piedra') && (optionSelected == 'papel')) {
     alert('Felicidades Ganastee!!! , ' + optionSelected + ' le gana a ' + optionRandom);
+    document.write(` Ganaste Tú con: ${optionSelected} <br>`)
+    countSelectedUser += 1;
+
   } else if ((optionRandom == 'papel') && (optionSelected == 'piedra')) {
     alert('Lo siento perdiste! : ' + optionRandom + ' le gana  a ' + optionSelected);
+    document.write(` Gana el computador con: ${optionRandom} <br>`)
+    countSelectedRandom += 1;
+
   } else if ((optionRandom == 'papel') && (optionSelected == 'tijera')) {
     alert('Felicidades Ganastee!!! , ' + optionSelected + ' le gana a ' + optionRandom);
+    document.write(` Ganaste Tú con: ${optionSelected} <br>`)
+    countSelectedUser += 1;
+
   } else if ((optionRandom == 'tijera') && (optionSelected == 'papel')) {
     alert('Lo siento perdiste! : ' + optionRandom + ' le gana  a ' + optionSelected);
+    document.write(` Gana el computador con: ${optionRandom} <br>`)
+    countSelectedRandom += 1;
+
   } else if ((optionRandom == 'tijera') && (optionSelected == 'piedra')) {
     alert('Felicidades Ganastee!!! , ' + optionSelected + ' le gana a ' + optionRandom);
-  }
-  //verifico cual es el ganador de la ronda
-  if (optionSelected < optionRandom) {
-    countSelectedUser += 1;
-  } else if (optionSelected > optionRandom) {
-    countSelectedRandom += 1;
-  } else {
-    countSelectedRandom += 1;
+    document.write(` Ganaste Tú con: ${optionSelected} <br>`);
     countSelectedUser += 1;
   }
-  //indico el numero de la ronda
-  document.write(i + ' ronda <br>');
   //muestro la jugada y a quien pertenece
   document.write(optionRandom + ' => ' + countSelectedRandom + ' // cpu ' + '<br>');
   document.write(optionSelected + '=> ' + countSelectedUser + ' // Tú ' + '<br>');
   document.write('<br>');
 }
-
-
-
-
 
 //otra forma
 // var opciones = ["Piedra", "Papel", "Tijera"];
