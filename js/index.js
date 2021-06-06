@@ -29,9 +29,17 @@ for (i = 1; i <= countRound; i++) {
   //comienza el calculo para ver quien gana
   if (optionRandom === optionSelected) {
     alert('Esto es un empate!!! ambos escogieron : ' + optionSelected);
-  } else if (optionRandom > optionSelected) {
+  } else if ((optionRandom == 'piedra') && (optionSelected == 'tijera')) {
     alert('Lo siento perdiste! : ' + optionRandom + ' le gana  a ' + optionSelected);
-  } else if (optionRandom < optionSelected) {
+  } else if ((optionRandom == 'piedra') && (optionSelected == 'papel')) {
+    alert('Felicidades Ganastee!!! , ' + optionSelected + ' le gana a ' + optionRandom);
+  } else if ((optionRandom == 'papel') && (optionSelected == 'piedra')) {
+    alert('Lo siento perdiste! : ' + optionRandom + ' le gana  a ' + optionSelected);
+  } else if ((optionRandom == 'papel') && (optionSelected == 'tijera')) {
+    alert('Felicidades Ganastee!!! , ' + optionSelected + ' le gana a ' + optionRandom);
+  } else if ((optionRandom == 'tijera') && (optionSelected == 'papel')) {
+    alert('Lo siento perdiste! : ' + optionRandom + ' le gana  a ' + optionSelected);
+  } else if ((optionRandom == 'tijera') && (optionSelected == 'piedra')) {
     alert('Felicidades Ganastee!!! , ' + optionSelected + ' le gana a ' + optionRandom);
   }
   //verifico cual es el ganador de la ronda
@@ -45,20 +53,15 @@ for (i = 1; i <= countRound; i++) {
   }
   //indico el numero de la ronda
   document.write(i + ' ronda <br>');
-  //imprimo mensaje si ganó o perdio en la ronda
-  if (countSelectedRandom > countSelectedUser) {
-    document.write('Perdiste!, gana el computador esta partida , lo siento! <br>');
-  } else if (countSelectedRandom < countSelectedUser) {
-    document.write('Felicidades!!!, Ganaste  <br>');
-  } else if (countSelectedRandom === countSelectedUser) {
-    document.write('Empate!, Ambos tuvieron el mismo puntaje <br>');
-  }
   //muestro la jugada y a quien pertenece
   document.write(optionRandom + ' => ' + countSelectedRandom + ' // cpu ' + '<br>');
   document.write(optionSelected + '=> ' + countSelectedUser + ' // Tú ' + '<br>');
   document.write('<br>');
-
 }
+
+
+
+
 
 //otra forma
 // var opciones = ["Piedra", "Papel", "Tijera"];
